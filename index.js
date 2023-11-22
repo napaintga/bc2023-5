@@ -53,7 +53,7 @@ app.get('/notes/:noteName', (req, res) => {
     return res.status(404).json({ error: 'Note not found' });
   }
 
-  res.json(note);
+  res.send(note.text);
 });
 
 app.put("/notes/:noteName", express.text(), (req, res) => {
